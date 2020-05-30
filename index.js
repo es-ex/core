@@ -1,6 +1,6 @@
 import Pump      from 'src/Pump';
 import Validator from 'src/Validator';
-import Drivers   from 'core/src/Drivers';
+import Drivers   from 'src/Drivers';
 
 /**
  * Runs a data transfer from on location to another if all options are valid.
