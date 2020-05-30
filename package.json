@@ -1,0 +1,23 @@
+{
+  "name": "@es-ex/core",
+  "version": "1.0.0",
+  "description": "Core module of es-ex that ties everything together.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/es-ex/core.git"
+  },
+  "keywords": [
+    "es-ex"
+  ],
+  "author": "Ravi Gairola <mallox@pyxzl.net>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/es-ex/core/issues"
+  },
+  "homepage": "https://github.com/es-ex/core#readme"
+}
