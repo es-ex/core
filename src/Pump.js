@@ -1,6 +1,6 @@
 import { Duplex, Transform } from 'stream';
-import Drivers    from './Drivers';
-import Results    from './Results.class';
+import Drivers    from './Drivers.js';
+import Results    from './Results.class.js';
 
 class Pump {
   /**
@@ -14,9 +14,7 @@ class Pump {
     let faucet = Drivers.fetch(options['faucet'.driver]);
     let sink = Drivers.fetch(options['sink'].driver);
     let stream = new Duplex({objectMode: true});
-    // TODO create many sinks using threading
     sink.import(options['sink'], stream);
-    // TODO create many faucets using threading
     faucet.export(options['faucet'], stream);
     stream.pipe(new FromTransformer(faucet)).pipe(new ToTransformer(sink));
     return results;
@@ -24,6 +22,8 @@ class Pump {
 }
 
 class FromTransformer extends Transform {
+  #driver
+  
   constructor (driver, options = {objectMode: true}) {
     super(options);
     this.#driver = driver;
@@ -35,6 +35,8 @@ class FromTransformer extends Transform {
 }
 
 class ToTransformer extends Transform {
+  #driver
+  
   constructor (driver, options = {objectMode: true}) {
     super(options);
     this.#driver = driver;
@@ -44,4 +46,5 @@ class ToTransformer extends Transform {
   }
 }
 
+// TODO think whether this needs to be a singleton
 export default new Pump();

@@ -4,20 +4,27 @@
   "description": "Core module of es-ex that ties everything together.",
   "main": "index.js",
   "type": "module",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "author": "Ravi Gairola <mallox@pyxzl.net>",
+  "license": "Apache-2.0",
+  "homepage": "https://github.com/es-ex/core#readme",
+  "keywords": [
+    "es-ex"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/es-ex/core.git"
   },
-  "keywords": [
-    "es-ex"
-  ],
-  "author": "Ravi Gairola <mallox@pyxzl.net>",
-  "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/es-ex/core/issues"
   },
-  "homepage": "https://github.com/es-ex/core#readme"
+  "scripts": {
+    "test": "nyc mocha",
+    "ci": "nyc mocha --reporter=text-lcov > coverage.lcov && codecov"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "codecov": "^3.7.0",
+    "mocha": "^7.2.0",
+    "nyc": "^15.1.0"
+  }
 }

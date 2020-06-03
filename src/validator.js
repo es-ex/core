@@ -1,4 +1,4 @@
-import Drivers from './Drivers';
+import Drivers from './Drivers.js';
 
 /**
  * Validates the incoming options.

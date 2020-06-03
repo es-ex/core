@@ -63,3 +63,17 @@ export class FaucetOptions extends PlumbingOptions {
    */
   query;
 }
+
+/**
+ * Options that can be used by either the sink or the faucet.
+ */
+export class PumpOptions extends Option {
+  /**
+   * @type {number} - How long a socket will be kept around once used to establish another connection.
+   */
+  agentKeepAlive = 5000
+  /**
+   * @type {number} - Timeout before a socket times out and gets closed.
+   */
+  agentTimeout = 10000
+}
